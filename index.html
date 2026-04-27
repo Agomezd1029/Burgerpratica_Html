@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GastroNeon | Festival de Sabores Futuristas</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="header">
+    <nav class="nav-bar" aria-label="Main Navigation">
+        <div class="logo">GASTRO<span>NEON</span></div>
+        
+        <button class="burger" id="menu-btn" aria-label="Toggle Menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </button>
+
+        <ul class="nav-list" id="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Experiencia</a></li>
+            <li><a href="#events">Calendario</a></li>
+            <li><a href="#gallery">Visuales</a></li>
+            <li><a href="#contact" class="btn-neon">Reservar</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- HERO: Layout de dos columnas con Flexbox -->
+    <section id="home" class="hero-neon">
+        <div class="hero-text">
+            <h1 class="glitch">Saborea el <br>Futuro</h1>
+            <p>Una inmersión sensorial nocturna donde la alta cocina se fusiona con luces de neón y beats electrónicos.</p>
+            <div class="hero-actions">
+                <a href="#events" class="btn-main">Ver Rutas</a>
+                <a href="#about" class="btn-link">Descubrir más →</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="circle-gradient"></div>
+            <img src="https://picsum.photos" alt="Plato Futurista">
+        </div>
+    </section>
+
+    <!-- SOBRE EL FESTIVAL: Lista Semántica -->
+    <section id="about" class="experience">
+        <div class="container">
+            <article class="exp-content">
+                <header>
+                    <span class="tag">The Concept</span>
+                    <h2>Zonas de Inmersión</h2>
+                </header>
+                <p>No es solo comer, es vivir una noche eléctrica. Hemos dividido el festival en áreas diseñadas para cada sentido:</p>
+                <ul class="check-list">
+                    <li><strong>Cyber-Street:</strong> Los mejores food trucks con toques de nitrógeno.</li>
+                    <li><strong>Zen Garden:</strong> Degustación de coctelería botánica bajo luz UV.</li>
+                    <li><strong>Beat Box:</strong> Escenario principal con chefs locales y DJs invitados.</li>
+                    <li><strong>Pixel Pastry:</strong> Repostería técnica y postres moleculares.</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <!-- CALENDARIO: Tabla Estilizada (Regla 2) -->
+    <section id="events" class="schedule">
+        <h2 class="title-center">Tour Gastronómico 2026</h2>
+        <div class="table-container">
+            <table class="neon-table">
+                <thead>
+                    <tr>
+                        <th>Destino</th>
+                        <th>Fecha</th>
+                        <th>Show Principal</th>
+                        <th>Tickets</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="city">Barranquilla</td>
+                        <td><time datetime="2026-05-12">12 Mayo</time></td>
+                        <td>Fuego & Nitrógeno</td>
+                        <td><a href="#" class="t-btn">Quedan 20</a></td>
+                    </tr>
+                    <tr>
+                        <td class="city">Cartagena</td>
+                        <td><time datetime="2026-05-19">19 Mayo</time></td>
+                        <td>Ceviche Molecular</td>
+                        <td><a href="#" class="t-btn">Agotado</a></td>
+                    </tr>
+                    <tr>
+                        <td class="city">Santa Marta</td>
+                        <td><time datetime="2026-05-26">26 Mayo</time></td>
+                        <td>Mar Caribe 3D</td>
+                        <td><a href="#" class="t-btn">Comprar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- GALERÍA: CSS GRID Asimétrico (Regla 2) -->
+    <section id="gallery" class="gallery">
+        <h2 class="title-center">Momentos GastroNeon</h2>
+        <div class="grid-layout">
+            <div class="grid-item tall"><img src="https://picsum.photos" alt="Vibe 1"></div>
+            <div class="grid-item"><img src="https://picsum.photos" alt="Vibe 2"></div>
+            <div class="grid-item"><img src="https://picsum.photos" alt="Vibe 3"></div>
+            <div class="grid-item wide">
+                <iframe src="https://youtube.com" title="Festival Teaser" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO: Formulario Minimalista -->
+    <section id="contact" class="contact-section">
+        <div class="contact-card">
+            <h2>Únete al Staff</h2>
+            <form id="form">
+                <div class="input-row">
+                    <input type="text" placeholder="Nombre" required>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <textarea placeholder="¿Cuál es tu especialidad culinaria?" rows="4" required></textarea>
+                <button type="submit" class="btn-submit">Enviar Registro</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-wrap">
+        <div class="f-logo">GASTRO<span>NEON</span></div>
+        <div class="f-social">
+            <a href="#">IG</a>
+            <a href="#">FB</a>
+            <a href="#">TW</a>
+        </div>
+        <p class="copy">&copy; 2026 GastroNeon — Bogotá, Colombia.</p>
+    </div>
+</footer>
+
+<script>
+    const btn = document.getElementById('menu-btn');
+    const list = document.getElementById('nav-list');
+    btn.addEventListener('click', () => {
+        list.classList.toggle('show');
+        btn.classList.toggle('active');
+    });
+</script>
+
+</body>
+</html>
